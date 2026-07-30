@@ -1,4 +1,5 @@
 import { profile } from '../data/profile.ts'
+import { Present } from './Present.tsx'
 
 /**
  * Light drifting behind a faint grid. Pure CSS: three blurred radial sources on
@@ -29,7 +30,13 @@ export function Masthead() {
 
         <ul className="mast-contact">
           {profile.contact.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item.text}>
+              {/* Wrapped: the li is a flex row whose gap belongs to the bullet. */}
+              <span>
+                {item.text}
+                {item.live ? <Present /> : null}
+              </span>
+            </li>
           ))}
         </ul>
       </div>

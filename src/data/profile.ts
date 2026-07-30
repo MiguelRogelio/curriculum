@@ -11,12 +11,13 @@ export const profile = {
 	/**
 	 * Centered line under the name, separated by bullets.
 	 * No email or phone here on purpose — the page is public and indexable.
+	 * `live` appends the running clock from Present.tsx after the text.
 	 */
 	contact: [
-		"AirLife",
-		"Medical device manufacturing",
-		"Aug 2016 – Present",
-		"GitHub: DevMikeRoger",
+		{ text: "AirLife", live: false },
+		{ text: "Medical device manufacturing", live: false },
+		{ text: "Aug 2016 –", live: true },
+		{ text: "GitHub: DevMikeRoger", live: false },
 	],
 
 	summary:
@@ -25,9 +26,9 @@ export const profile = {
 
 /** Same site, three corporate identities. Rendered as one line under Experience. */
 export const employers = [
-	{ name: "Halyard Health", span: "2016–2018" },
-	{ name: "Avanos Medical", span: "2018–2024" },
-	{ name: "AirLife", span: "2024–present" },
+	{ name: "Halyard Health", span: "2016–2018", live: false },
+	{ name: "Avanos Medical", span: "2018–2024", live: false },
+	{ name: "AirLife", span: "2024 –", live: true },
 ] as const;
 
 /**
@@ -161,6 +162,8 @@ export type Role = {
 	employer: string;
 	context: string;
 	points: string[];
+	/** Ends the span with the running clock instead of the word "Present". */
+	live?: boolean;
 };
 
 export const roles: Role[] = [
@@ -168,7 +171,8 @@ export const roles: Role[] = [
 		employer: "AirLife",
 		context: "Temporary assignment",
 		title: "Software Developer",
-		span: "May 2026 – Present",
+		span: "May 2026 –",
+		live: true,
 		points: [
 			"Designing and building AssetsCore, the fixed-asset management platform for the SAM III plant, from the ground up.",
 			"Own the plant's real-time production monitoring, from acquiring controller data on the floor to the hourly, shift and monthly numbers the teams work from.",

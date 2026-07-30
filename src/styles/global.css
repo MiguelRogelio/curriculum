@@ -263,12 +263,44 @@ ol {
   border-bottom: 1px solid var(--line-hi);
 }
 
+/* The mono meta line under a heading. Sized up from the 0.75rem it used to be:
+   these lines carry real information (tenure, stack) and were reading as
+   fine print. */
 .section-note {
   margin-top: 0.7rem;
   font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--ink-3);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-2);
   text-align: center;
+}
+
+.tenure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.3rem 0.85rem;
+}
+
+.tenure-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.tenure-item:not(:last-child)::after {
+  content: '→';
+  margin-left: 0.4rem;
+  color: var(--blue);
+}
+
+.tenure-name {
+  color: var(--ink);
+}
+
+.tenure-span {
+  color: var(--ink-3);
 }
 
 .section-body {
@@ -318,11 +350,13 @@ ol {
   color: var(--ink-2);
 }
 
+/* Bare text, no plate: these lines earn attention from size and ink alone. */
 .entry-context,
 .entry-span {
   font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--ink-3);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-2);
   text-align: right;
 }
 
@@ -335,6 +369,45 @@ ol {
 
 .entry-span--lead {
   color: var(--blue);
+}
+
+/* ==========================================================================
+   Present — today's date standing in for the word on the page.
+   ========================================================================== */
+.present {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-inline-start: 0.35rem;
+  color: var(--blue-soft);
+}
+
+.present-dot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--blue);
+  animation: present-pulse 2.6s ease-out infinite;
+}
+
+.present-date {
+  letter-spacing: 0.01em;
+  color: var(--blue);
+  /* The date is one unit; never let a line break land inside it. */
+  white-space: nowrap;
+}
+
+@keyframes present-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(74 158 255 / 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgb(74 158 255 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(74 158 255 / 0);
+  }
 }
 
 .entry-points {
@@ -381,8 +454,9 @@ ol {
 
 .skill-label {
   font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--ink-3);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-2);
   padding-top: 0.15rem;
 }
 
@@ -414,8 +488,9 @@ ol {
    ========================================================================== */
 .edu-note {
   font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--ink-3);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-2);
   margin-top: 0.2rem;
 }
 
@@ -496,6 +571,10 @@ ol {
   }
 
   .aurora-blob {
+    animation: none;
+  }
+
+  .present-dot {
     animation: none;
   }
 }
