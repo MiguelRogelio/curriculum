@@ -226,8 +226,8 @@ export const languages = [
 	},
 	{
 		language: "English",
-		level: "A1 · CEFR",
-		note: "Technical reading is day-to-day work: framework documentation, API references, error messages, GitHub issues and code review threads are all read directly in English. Written exchange in short form. Conversation is at a beginner level and actively improving.",
+		level: "A2 · CEFR",
+		note: "Daily technical reading: documentation, API references, code review threads. Short-form writing. Conversation at a beginner level and actively developing.",
 	},
 ] as const;
 
