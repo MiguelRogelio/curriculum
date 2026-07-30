@@ -4,13 +4,15 @@ import { Section } from './Section.tsx'
 export function Education() {
   return (
     <Section id="education" title="Education">
-      <article className="entry">
-        <header className="entry-head">
-          <p className="entry-org">{education.school}</p>
-          <h3 className="entry-title">{education.degree}</h3>
-        </header>
-        <p className="edu-note">{education.note}</p>
-      </article>
+      {education.map((entry) => (
+        <article className="entry" key={entry.degree}>
+          <header className="entry-head">
+            <p className="entry-org">{entry.school}</p>
+            <h3 className="entry-title">{entry.degree}</h3>
+          </header>
+          <p className="edu-note">{entry.note}</p>
+        </article>
+      ))}
     </Section>
   )
 }
