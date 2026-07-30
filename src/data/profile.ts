@@ -158,7 +158,8 @@ export const projects: Project[] = [
 
 export type Role = {
 	title: string;
-	span: string;
+	/** Optional: a role with no dates simply renders without them. */
+	span?: string;
 	employer: string;
 	context: string;
 	points: string[];
@@ -198,6 +199,15 @@ export const roles: Role[] = [
 		span: "Aug 2016 – 2019",
 		points: [
 			"Hands-on manufacturing experience in a regulated medical device labeling environment.",
+		],
+	},
+	{
+		employer: "Yamana Gold",
+		context: "Mining · process plant",
+		title: "Control Room Operator",
+		points: [
+			"Ran the process plant from the control room, following equipment and process readings on screen across the shift and responding as conditions changed.",
+			"First exposure to industrial control systems — the operator's side of the same screens I now build for the production floor.",
 		],
 	},
 ];

@@ -30,11 +30,15 @@ export function Experience() {
             <p className="entry-org">{role.employer}</p>
             <p className="entry-context">{role.context}</p>
             <h3 className="entry-title">{role.title}</h3>
-            {/* The current role gets the accent; the rest stay quiet. */}
-            <p className={i === 0 ? 'entry-span entry-span--lead' : 'entry-span'}>
-              {role.span}
-              {role.live ? <Present /> : null}
-            </p>
+            {/* Dateless roles skip the element entirely rather than leaving an
+                empty line in the grid. The current role gets the accent; the
+                rest stay quiet. */}
+            {role.span || role.live ? (
+              <p className={i === 0 ? 'entry-span entry-span--lead' : 'entry-span'}>
+                {role.span}
+                {role.live ? <Present /> : null}
+              </p>
+            ) : null}
           </header>
 
           <ul className="entry-points">
