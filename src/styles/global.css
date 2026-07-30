@@ -289,9 +289,10 @@ ol {
   gap: 0.45rem;
 }
 
-.tenure-item:not(:last-child)::after {
+/* Arrow leads each item after the first, rather than trailing every item but the
+   last — the badge is a sibling here, and a trailing rule would point at it. */
+.tenure-item + .tenure-item::before {
   content: '→';
-  margin-left: 0.4rem;
   color: var(--blue);
 }
 
@@ -301,6 +302,22 @@ ol {
 
 .tenure-span {
   color: var(--ink-3);
+}
+
+/* Total time on site, computed. A line of its own in the display face: bigger
+   than the chain it summarises, and the only accent it needs is colour. */
+.tenure-total {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: var(--display);
+  font-size: clamp(1rem, 2.4vw, 1.1875rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--ink-2);
+}
+
+.tenure-years {
+  color: var(--blue);
 }
 
 .section-body {

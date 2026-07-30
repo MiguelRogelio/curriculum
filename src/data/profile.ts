@@ -24,6 +24,16 @@ export const profile = {
 		"Software developer at AirLife, a medical device manufacturer, building the web and industrial IoT systems the plant runs on. Ten years on the same site — first labeling production, then quality, now software — so I know what a production number means before I query it. I work in React, TypeScript, Node.js and SQL Server, and I read live data off Allen-Bradley PLCs without touching plant operation.",
 } as const;
 
+/**
+ * Drives the computed years badge on the Experience tenure line. Nobody has to
+ * remember to bump a number: the first day on site is the only fact stored.
+ */
+export const siteTenure = {
+	/** ISO date of the first day at the plant. */
+	start: "2016-08-01",
+	label: "at the SAM III plant",
+} as const;
+
 /** Same site, three corporate identities. Rendered as one line under Experience. */
 export const employers = [
 	{ name: "Halyard Health", span: "2016–2018", live: false },
@@ -89,7 +99,6 @@ export const skillRows: SkillRow[] = [
 			{ label: "Git", icon: "git" },
 			{ label: "GitHub", icon: "github" },
 			{ label: "PM2", icon: "pm2" },
-			{ label: "pnpm", icon: "pnpm" },
 		],
 	},
 	{

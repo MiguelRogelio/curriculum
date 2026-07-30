@@ -1,24 +1,29 @@
 import { employers, roles } from '../data/profile.ts'
 import { Present } from './Present.tsx'
 import { Section } from './Section.tsx'
+import { TenureHeadline } from './Tenure.tsx'
 
 /**
- * One site, three names. Set as a chain rather than a joined string so the
- * company reads brighter than its dates and the arrows carry the takeaway:
- * these are renames, not job changes.
+ * Total years first, then the chain that adds up to them. One site, three
+ * names: set as a chain rather than a joined string so the company reads
+ * brighter than its dates and the arrows carry the takeaway — these are
+ * renames, not job changes.
  */
 const tenure = (
-  <span className="tenure">
-    {employers.map((employer) => (
-      <span className="tenure-item" key={employer.name}>
-        <span className="tenure-name">{employer.name}</span>
-        <span className="tenure-span">
-          {employer.span}
-          {employer.live ? <Present /> : null}
+  <>
+    <TenureHeadline />
+    <span className="tenure">
+      {employers.map((employer) => (
+        <span className="tenure-item" key={employer.name}>
+          <span className="tenure-name">{employer.name}</span>
+          <span className="tenure-span">
+            {employer.span}
+            {employer.live ? <Present /> : null}
+          </span>
         </span>
-      </span>
-    ))}
-  </span>
+      ))}
+    </span>
+  </>
 )
 
 export function Experience() {
