@@ -3,10 +3,11 @@ import { profile } from '../data/profile.ts'
 /**
  * Light drifting behind a faint grid. Pure CSS: three blurred radial sources on
  * long, offset loops, so it animates transform only and never touches layout.
+ * Shared with the footer, which flips the fade via the `aurora--foot` modifier.
  */
-function AuroraField() {
+export function AuroraField({ variant }: { variant?: 'foot' }) {
   return (
-    <div className="aurora">
+    <div className={variant === 'foot' ? 'aurora aurora--foot' : 'aurora'}>
       <div className="aurora-blob aurora-blob--royal" />
       <div className="aurora-blob aurora-blob--azure" />
       <div className="aurora-blob aurora-blob--indigo" />
