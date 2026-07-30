@@ -118,8 +118,9 @@ export type Project = {
 
 /**
  * Systems built, described at the technical level: architecture, decisions,
- * constraints. Ongoing duties belong in `roles` instead — keeping the two at
- * different altitudes is what stops the sections repeating each other.
+ * constraints, and delivery stage — each stated here once. `roles` carries the
+ * scope of the job instead, and names no system and no stack. Keeping the two
+ * at different altitudes is what stops the sections repeating each other.
  */
 export const projects: Project[] = [
 	{
@@ -128,7 +129,7 @@ export const projects: Project[] = [
 		kind: "Fixed-asset management platform",
 		stack: "React · TypeScript · Express · SQL Server",
 		points: [
-			"Currently designing and building the platform that will track fixed assets across plants in Mexico and the United States (in active development).",
+			"In active development for the SAM III plant: will track fixed assets across sites in Mexico and the United States.",
 			"JWT and bcrypt authentication with role-based access control.",
 			"Normalized SQL Server schema designed from the ground up; will be self-hosted on the corporate LAN with PM2.",
 		],
@@ -139,7 +140,7 @@ export const projects: Project[] = [
 		kind: "Real-time industrial IoT",
 		stack: "Node.js · EtherNet/IP · Socket.IO · React",
 		points: [
-			"Reads live data from Allen-Bradley CompactLogix and ControlLogix PLCs over EtherNet/IP in Node.js.",
+			"Demo built and demonstrated, with development continuing: reads live data from Allen-Bradley CompactLogix and ControlLogix PLCs over EtherNet/IP in Node.js.",
 			"Read-only against the controllers, so plant operation is never affected.",
 			"Streams hourly, shift and monthly production metrics over Socket.IO to a React and Recharts frontend, with downtime recorded in SQL Server.",
 		],
@@ -175,8 +176,7 @@ export const roles: Role[] = [
 		span: "May 2026 –",
 		live: true,
 		points: [
-			"Designing and building AssetsCore, the fixed-asset management platform for the SAM III plant, from the ground up.",
-			"Own the plant's real-time production monitoring, from acquiring controller data on the floor to the hourly, shift and monthly numbers the teams work from.",
+			"Build the plant's two new systems end to end — requirements, database schema, backend, frontend and deployment: fixed-asset management, and real-time monitoring of the production floor.",
 			"Build and support the internal Power Platform apps plant teams use day to day.",
 			"Maintain the legacy VB.NET applications the plant depends on, migrating their functionality onto the modern web stack one piece at a time.",
 			"Administer the development database environments, including migration from SQL Server.",
