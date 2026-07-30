@@ -1,6 +1,7 @@
 import { Education } from './components/Education.tsx'
 import { Experience } from './components/Experience.tsx'
 import { Footer } from './components/Footer.tsx'
+import { Languages } from './components/Languages.tsx'
 import { Masthead } from './components/Masthead.tsx'
 import { Skills } from './components/Skills.tsx'
 import { Summary } from './components/Summary.tsx'
@@ -16,6 +17,7 @@ export function App() {
         <Experience />
         <Work />
         <Education />
+        <Languages />
       </main>
       <Footer />
     </>

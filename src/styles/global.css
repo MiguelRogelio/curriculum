@@ -419,6 +419,14 @@ ol {
   margin-top: 0.2rem;
 }
 
+/* Prose, not a label — set in the body face so a full sentence stays readable. */
+.lang-note {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-top: 0.35rem;
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */

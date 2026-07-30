@@ -198,6 +198,25 @@ export const roles: Role[] = [
 	},
 ];
 
+/**
+ * Levels stated on the CEFR scale so they read the same to any recruiter.
+ * Kept honest: the reading skill is real and load-bearing at work; the
+ * conversational level is not there yet, and saying so is better than
+ * discovering it in an interview.
+ */
+export const languages = [
+	{
+		language: "Spanish",
+		level: "Native",
+		note: "First language.",
+	},
+	{
+		language: "English",
+		level: "A1 · CEFR",
+		note: "Technical reading is day-to-day work: framework documentation, API references, error messages, GitHub issues and code review threads are all read directly in English. Written exchange in short form. Conversation is at a beginner level and actively improving.",
+	},
+] as const;
+
 export const education = [
 	{
 		school: "Universidad Estatal de Sonora (UES)",
