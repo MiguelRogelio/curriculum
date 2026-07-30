@@ -26,8 +26,8 @@ export const profile = {
 /** Same site, three corporate identities. Rendered as one line under Experience. */
 export const employers = [
 	{ name: "Halyard Health", span: "2016–2018" },
-	{ name: "Avanos Medical", span: "2018–2023" },
-	{ name: "AirLife", span: "2023–present" },
+	{ name: "Avanos Medical", span: "2018–2024" },
+	{ name: "AirLife", span: "2024–present" },
 ] as const;
 
 /**
